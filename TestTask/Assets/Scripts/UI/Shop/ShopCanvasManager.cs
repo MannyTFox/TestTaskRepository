@@ -19,10 +19,7 @@ public class ShopCanvasManager : MonoBehaviour
         uiEnabled = false;
     }
 
-    private void Update()
-    {
-        goldDisplay.text = playerGold.ToString() + "g";
-    }
+
 
     public void Open()
     {

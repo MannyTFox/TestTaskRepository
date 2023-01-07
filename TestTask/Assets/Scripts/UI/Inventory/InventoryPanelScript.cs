@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InventoryPanelScript : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI goldDisplay; 
     [SerializeField] GameObject buttonTemplate;
     GameObject player;
     PlayerInventory inventory;
@@ -38,5 +40,12 @@ public class InventoryPanelScript : MonoBehaviour
             GameObject g = Instantiate(buttonTemplate, transform);
             g.GetComponent<ItemTemplateScript>().Create(item);
         }
+    }
+
+    private void Update()
+    {
+
+        goldDisplay.text = player.GetComponent<PlayerInventory>().gold.ToString();
+    
     }
 }
