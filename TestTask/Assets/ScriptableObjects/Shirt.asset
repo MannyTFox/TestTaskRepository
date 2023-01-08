@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12a914a571c564449c7883b611457b9, type: 3}
   m_Name: Shirt
   m_EditorClassIdentifier: 
+  slotType: chest
   itemImage: {fileID: 21300000, guid: 11f35a873f20f8945ac3faf1da7ba1b2, type: 3}
   itemName: Shirt
   itemPrice: 10
+  itemObj: {fileID: 7016936614361751121, guid: 6156a21e359bc3c40a611570a62e82d3, type: 3}

@@ -20,5 +20,22 @@ public class ItemTemplateScript : MonoBehaviour
         itemNameDisplay.text = item.itemName;
     }
 
+    public void Equip()
+    {
+        //remove item from inventory to avoid item duplication glitch
+        var player = GameObject.FindGameObjectWithTag("Player");
+
+        player.GetComponent<PlayerInventory>().items.Remove(item);
+        /////
+
+        var equipmentManager = GameObject.FindGameObjectWithTag("EquipmentPanel").GetComponent<EquipmentManager>();
+
+        equipmentManager.EquipItem(item);
+
+        Destroy(gameObject);
+    }
+
+   
+ 
 
 }
