@@ -23,16 +23,57 @@ public class ItemTemplateScript : MonoBehaviour
     public void Equip()
     {
         //remove item from inventory to avoid item duplication glitch
-        var player = GameObject.FindGameObjectWithTag("Player");
 
-        player.GetComponent<PlayerInventory>().items.Remove(item);
         /////
-
-        var equipmentManager = GameObject.FindGameObjectWithTag("EquipmentPanel").GetComponent<EquipmentManager>();
+        /*
+        
 
         equipmentManager.EquipItem(item);
 
         Destroy(gameObject);
+        */
+        var player = GameObject.FindGameObjectWithTag("Player");
+        var equipmentManager = GameObject.FindGameObjectWithTag("EquipmentPanel").GetComponent<EquipmentManager>();
+
+        switch (item.slotType)
+        {
+            case "head":
+                if(equipmentManager.headSlotFull == false)
+                {
+                    
+                    player.GetComponent<PlayerInventory>().items.Remove(item);
+
+                    equipmentManager.EquipItem(item);
+
+                    Destroy(gameObject);
+                }
+            break;
+
+            case "chest":
+                if (equipmentManager.chestSlotFull == false)
+                {
+                    
+                    player.GetComponent<PlayerInventory>().items.Remove(item);
+
+                    equipmentManager.EquipItem(item);
+
+                    Destroy(gameObject);
+                }
+                break;
+
+            case "feet":
+                if (equipmentManager.feetSlotFull == false)
+                {
+                    
+                    player.GetComponent<PlayerInventory>().items.Remove(item);
+
+                    equipmentManager.EquipItem(item);
+
+                    Destroy(gameObject);
+                }
+                break;
+
+        }
     }
 
    
