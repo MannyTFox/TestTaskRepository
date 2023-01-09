@@ -28,11 +28,7 @@ public class EquipmentTemplateScript : MonoBehaviour
 
         equipmentManager.UnequipItem(item);
 
-        var player = GameObject.FindGameObjectWithTag("Player");
-
-        player.GetComponent<PlayerInventory>().items.Add(item);
-        player.GetComponent<PlayerInventory>().ListHasChanged();
-        player.GetComponent<PlayerInventory>().EquipmentHasChanged();
+      
 
         Destroy(gameObject);
     }

@@ -18,11 +18,7 @@ public class InventoryPanelScript : MonoBehaviour
 
         //Update once on start
         UpdateInventoryDisplay();
-
-
-
-        // Subscribing to the Inventory change event
-        inventory.OnInventoryChanged += UpdateInventoryDisplay;
+        
     }
 
 
@@ -40,7 +36,12 @@ public class InventoryPanelScript : MonoBehaviour
             GameObject g = Instantiate(buttonTemplate, transform);
             g.GetComponent<ItemTemplateScript>().Create(item);
         }
+
+       
+
     }
+
+    
 
     private void Update()
     {

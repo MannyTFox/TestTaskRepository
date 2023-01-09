@@ -46,8 +46,10 @@ public class EquipmentManager : MonoBehaviour
                     g = Instantiate(EquipmentTemplate, headSlot.transform, false);
                     g.GetComponent<EquipmentTemplateScript>().Create(item);
 
+                    player.GetComponent<PlayerInventory>().items.Remove(item);
                     player.GetComponent<PlayerInventory>().equipedItems.Add(item);
                     player.GetComponent<PlayerInventory>().EquipmentHasChanged();
+                    player.GetComponent<PlayerInventory>().InventoryHasChanged();
 
                     headSlotFull = true;
                 }
@@ -60,8 +62,10 @@ public class EquipmentManager : MonoBehaviour
                     g = Instantiate(EquipmentTemplate, chestSlot.transform, false);
                     g.GetComponent<EquipmentTemplateScript>().Create(item);
 
+                    player.GetComponent<PlayerInventory>().items.Remove(item);
                     player.GetComponent<PlayerInventory>().equipedItems.Add(item);
                     player.GetComponent<PlayerInventory>().EquipmentHasChanged();
+                    player.GetComponent<PlayerInventory>().InventoryHasChanged();
 
                     chestSlotFull = true;
                 }
@@ -74,8 +78,10 @@ public class EquipmentManager : MonoBehaviour
                     g = Instantiate(EquipmentTemplate, feetSlot.transform, false);
                     g.GetComponent<EquipmentTemplateScript>().Create(item);
 
+                    player.GetComponent<PlayerInventory>().items.Remove(item);
                     player.GetComponent<PlayerInventory>().equipedItems.Add(item);
                     player.GetComponent<PlayerInventory>().EquipmentHasChanged();
+                    player.GetComponent<PlayerInventory>().InventoryHasChanged();
 
                     feetSlotFull = true;
                 }
@@ -94,8 +100,10 @@ public class EquipmentManager : MonoBehaviour
             case "head":
                 if (headSlotFull == true)
                 {
+                    player.GetComponent<PlayerInventory>().items.Add(item);
                     player.GetComponent<PlayerInventory>().equipedItems.Remove(item);
                     player.GetComponent<PlayerInventory>().EquipmentHasChanged();
+                    player.GetComponent<PlayerInventory>().InventoryHasChanged();
                     headSlotItem = null;
                     headSlotFull = false;
                 }
@@ -104,9 +112,10 @@ public class EquipmentManager : MonoBehaviour
             case "chest":
                 if (chestSlotFull == true)
                 {
-
+                    player.GetComponent<PlayerInventory>().items.Add(item);
                     player.GetComponent<PlayerInventory>().equipedItems.Remove(item);
                     player.GetComponent<PlayerInventory>().EquipmentHasChanged();
+                    player.GetComponent<PlayerInventory>().InventoryHasChanged();
                     chestSlotItem = null;
                     chestSlotFull = false;
                 }
@@ -115,9 +124,10 @@ public class EquipmentManager : MonoBehaviour
             case "feet":
                 if (feetSlotFull == true)
                 {
-
+                    player.GetComponent<PlayerInventory>().items.Add(item);
                     player.GetComponent<PlayerInventory>().equipedItems.Remove(item);
                     player.GetComponent<PlayerInventory>().EquipmentHasChanged();
+                    player.GetComponent<PlayerInventory>().InventoryHasChanged();
                     feetSlotItem = null;
                     feetSlotFull = false;
                 }

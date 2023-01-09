@@ -39,10 +39,7 @@ public class ItemTemplateScript : MonoBehaviour
         {
             case "head":
                 if(equipmentManager.headSlotFull == false)
-                {
-                    
-                    player.GetComponent<PlayerInventory>().items.Remove(item);
-
+                {                                                    
                     equipmentManager.EquipItem(item);
 
                     Destroy(gameObject);
@@ -51,10 +48,7 @@ public class ItemTemplateScript : MonoBehaviour
 
             case "chest":
                 if (equipmentManager.chestSlotFull == false)
-                {
-                    
-                    player.GetComponent<PlayerInventory>().items.Remove(item);
-
+                {                                       
                     equipmentManager.EquipItem(item);
 
                     Destroy(gameObject);
@@ -63,10 +57,7 @@ public class ItemTemplateScript : MonoBehaviour
 
             case "feet":
                 if (equipmentManager.feetSlotFull == false)
-                {
-                    
-                    player.GetComponent<PlayerInventory>().items.Remove(item);
-
+                {                                  
                     equipmentManager.EquipItem(item);
 
                     Destroy(gameObject);

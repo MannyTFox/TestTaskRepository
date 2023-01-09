@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
-    public Canvas dialogueCanvas;
-    public Canvas interactionCanvas;
-    public Canvas inventoryCanvas;
-    public Canvas shopCanvas;
+    [SerializeField] AudioClip buttonSound;
+    [SerializeField] AudioClip closeSound;
+    [SerializeField] AudioClip buySound;
+    [SerializeField] AudioClip equipSound;
 
+    AudioSource source;
 
-    void Update()
+    public void PlaySound(AudioClip clip)
     {
-        
+        source = GetComponent<AudioSource>();
+        source.clip = clip;
+        source.Play();
     }
+    
 }

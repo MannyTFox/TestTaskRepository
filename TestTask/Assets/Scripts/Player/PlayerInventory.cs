@@ -7,6 +7,8 @@ public delegate void inventoryChangedEventHandler();
 
 public class PlayerInventory : MonoBehaviour
 {
+    public AudioClip equipClip;
+    
 
     public event inventoryChangedEventHandler OnInventoryChanged;
     public event equipmentChangedEventHandler OnEquipmentChanged;
@@ -19,18 +21,19 @@ public class PlayerInventory : MonoBehaviour
         
 
 
-    public void ListHasChanged()
+    public void InventoryHasChanged()
     {
-        OnInventoryChanged?.Invoke();
+        GameObject.FindObjectOfType<InventoryPanelScript>().UpdateInventoryDisplay();
+        GameObject.FindObjectOfType<CanvasManager>().PlaySound(equipClip);
     }
 
     public void EquipmentHasChanged()
     {
-        OnEquipmentChanged?.Invoke();
-        DisplayGear();
+        UpdateEquipmentDisplay();
+
     }
 
-    public void DisplayGear()
+    public void UpdateEquipmentDisplay()
     {
         // Clear the current gear
         foreach (Transform child in transform)

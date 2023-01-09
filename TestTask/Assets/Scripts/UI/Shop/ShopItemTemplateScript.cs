@@ -67,7 +67,7 @@ public class ShopItemTemplateScript : MonoBehaviour
                 //buy the item
                 player.GetComponent<PlayerInventory>().gold -= item.itemPrice;              
                 player.GetComponent<PlayerInventory>().items.Add(item);
-                player.GetComponent<PlayerInventory>().ListHasChanged();
+                player.GetComponent<PlayerInventory>().InventoryHasChanged();
                 itemAmmount -= 1;
             }
 
