@@ -10,9 +10,6 @@ public class PlayerInventory : MonoBehaviour
     public AudioClip equipClip;
     
 
-    public event inventoryChangedEventHandler OnInventoryChanged;
-    public event equipmentChangedEventHandler OnEquipmentChanged;
-
     public int gold;
     public List<Item> items = new List<Item>();
     public List<Item> equipedItems = new List<Item>();
@@ -23,6 +20,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void InventoryHasChanged()
     {
+        GameObject.FindObjectOfType<SellPanelScript>().UpdateSellPanelDisplay();
         GameObject.FindObjectOfType<InventoryPanelScript>().UpdateInventoryDisplay();
         GameObject.FindObjectOfType<CanvasManager>().PlaySound(equipClip);
     }

@@ -58,17 +58,21 @@ public class ShopItemTemplateScript : MonoBehaviour
         //first we check if the item is not out of stock
         if (!outOfStock)
         {
-            //get a reference to the player's inventory
+            //get a reference to the player's and shopkeep's inventory
             var inventory = player.GetComponent<PlayerInventory>();
-
+            var shopkeep = GameObject.FindObjectOfType<ShopkeepInventory>();
             //if the player has enough gold
             if (inventory.gold >= item.itemPrice)
             {
                 //buy the item
                 player.GetComponent<PlayerInventory>().gold -= item.itemPrice;              
                 player.GetComponent<PlayerInventory>().items.Add(item);
+                shopkeep.items.Remove(item);
                 player.GetComponent<PlayerInventory>().InventoryHasChanged();
+
+                
                 itemAmmount -= 1;
+                GameObject.FindObjectOfType<ShopPanelScript>().UpdateShopkeepInventoryDisplay();
             }
 
         }

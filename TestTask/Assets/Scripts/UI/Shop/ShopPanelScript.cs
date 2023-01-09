@@ -18,6 +18,17 @@ public class ShopPanelScript : MonoBehaviour
         inventory = shopkeep.GetComponent<ShopkeepInventory>();
         player = GameObject.FindGameObjectWithTag("Player");
 
+        UpdateShopkeepInventoryDisplay();
+    }
+
+    private void Update()
+    {
+        
+        goldDisplay.text = player.GetComponent<PlayerInventory>().gold.ToString();
+    }
+
+    public void UpdateShopkeepInventoryDisplay()
+    {
         // Clear the current buttons
         foreach (Transform child in transform)
         {
@@ -31,12 +42,5 @@ public class ShopPanelScript : MonoBehaviour
             g.GetComponent<ShopItemTemplateScript>().Create(item);
         }
     }
-
-    private void Update()
-    {
-        
-        goldDisplay.text = player.GetComponent<PlayerInventory>().gold.ToString();
-    }
-
 
 }
