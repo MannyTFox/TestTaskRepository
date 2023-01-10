@@ -64,6 +64,9 @@ public class ItemTemplateScript : MonoBehaviour
                 }
                 break;
 
+            case "": //for unequipable items
+                break;
+
         }
     }
 

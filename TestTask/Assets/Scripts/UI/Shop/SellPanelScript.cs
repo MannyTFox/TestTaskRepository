@@ -24,7 +24,7 @@ public class SellPanelScript : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player");
         inventory = player.GetComponent<PlayerInventory>();
-
+        UpdateSellPanelDisplay();
        
     }
 

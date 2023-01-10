@@ -15,5 +15,6 @@ MonoBehaviour:
   slotType: head
   itemImage: {fileID: 21300000, guid: d2da2a0cd10373e4a838bd946e9a8a77, type: 3}
   itemName: Crown
-  itemPrice: 50
+  itemPrice: 20
+  itemSellPrice: 0
   itemObj: {fileID: 7016936614361751121, guid: 6156a21e359bc3c40a611570a62e82d3, type: 3}
